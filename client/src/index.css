@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* 
+     Primary: Deep Green (#1E4D2B) -> 136 44% 21%
+     Secondary: Agriculture Yellow (#D9B44A) -> 44 65% 57%
+     Accent: White (#FFFFFF)
+     Neutral: Dark Grey (#2B2B2B) -> 0 0% 17%, Light Grey (#F5F5F5) -> 0 0% 96%
+  */
+
+  --font-display: 'Montserrat', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  --background: 0 0% 98%;      /* Lightest Grey */
+  --foreground: 0 0% 15%;   /* Dark Grey for better readability */
+
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 15%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 15%;
+
+  --primary: 136 44% 21%;      /* Deep Green */
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 38 70% 50%;     /* Darker Gold/Amber for better contrast */
+  --secondary-foreground: 136 44% 15%;
+
+  --muted: 0 0% 94%;
+  --muted-foreground: 0 0% 40%;
+  
+  --accent: 38 70% 50%;
+  --accent-foreground: 136 44% 15%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+
+  --border: 0 0% 90%;
+  --input: 0 0% 90%;
+  --ring: 136 44% 21%;
+
+  --radius: 0.25rem; /* Sharp, industrial corners */
+}
+
+.dark {
+  /* Dark mode palette if needed, but corporate usually implies light mode first */
+  --background: 0 0% 10%;
+  --foreground: 0 0% 98%;
+
+  --card: 0 0% 12%;
+  --card-foreground: 0 0% 98%;
+
+  --popover: 0 0% 12%;
+  --popover-foreground: 0 0% 98%;
+
+  --primary: 136 44% 25%;
+  --primary-foreground: 0 0% 98%;
+
+  --secondary: 38 70% 50%;
+  --secondary-foreground: 0 0% 10%;
+
+  --muted: 0 0% 15%;
+  --muted-foreground: 0 0% 65%;
+
+  --accent: 0 0% 15%;
+  --accent-foreground: 0 0% 98%;
+
+  --destructive: 0 62% 30%;
+  --destructive-foreground: 0 0% 98%;
+
+  --border: 0 0% 20%;
+  --input: 0 0% 20%;
+  --ring: 136 44% 25%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    @apply font-bold tracking-tight;
+  }
+}
+
+.iso-pattern {
+  background-image: radial-gradient(var(--border) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
